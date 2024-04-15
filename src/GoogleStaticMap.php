@@ -14,6 +14,7 @@ class GoogleStaticMap
     private $mapId = null;
     private $format = Format::JPG;
     private $markers = [];
+    private $paths = [];
 
     /**
      * Construct class.
@@ -154,6 +155,27 @@ class GoogleStaticMap
     {
         $this->format = $format;
 
+        return $this;
+    }
+
+    /**
+     * Draw a polygon on the map,
+     * @param array $points
+     * @param string $border_color // Border color is RGB HEX
+     * @param int $border_weight // PT of weight
+     * @param string $fill_color // Fill color is RGB(A) HEX
+     *
+     * @return $this
+     */
+    public function addPolygon($points, $border_color, $border_weight, $fill_color){
+
+        $path = 'color:0x'.$border_color.'|weight:'.$border_weight.'|fillcolor:0x' . $fill_color;
+
+        foreach ($points as $point) {
+            $path .= '|' . $point['lat'] . ',' . $point['lng'];
+        }
+
+        $this->paths[] = $path;
         return $this;
     }
 
@@ -311,6 +333,10 @@ class GoogleStaticMap
             }
 
             $url .= '&markers='.$decode;
+        }
+
+        foreach($this->paths as $path){
+            $url .= '&path=' . $path;
         }
 
         if (isset($this->apiSecret) && strlen($this->apiSecret) > 0) {
