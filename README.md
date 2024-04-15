@@ -64,23 +64,24 @@ $url = $map->setCenter('Tehran')
 
 ## Function
 
-| Function | Description |
-| :--- | :--- |
-| setSecret(secret) | Set signing secret key. |
-| setCenter(location) | Set map center with address. |
-| setCenterLatLng(latitude, longitude) | Set map center with latitude and longitude. |
-| setZoom(zoom) | Set map zoom. |
-| setScale(scale) | Set map scale. |
-| setSize(width, height) | Set map size. |
-| setMapType(type as MapType) | Set map type. |
-| setMapId(id) | Set a map ID previously created in Cloud Console.  |
-| setFormat(format as Format) | Set map format. |
-| addMarker(center, label, color, size) | Add marker to map. |
-| addMarkerLatLng(latitude, longitude, label, color, size) | Add marker to map with latitude and longitude. |
-| addMarkerWithIcon(center, icon, shadow) | Add custom marker to map. |
-| addMarkerLatLngWithIcon(latitude, longitude, icon, shadow) | Add marker to map with latitude and longitude. |
-| make() | Make url string. |
-| download($path = 'current path', $name_length = 10) | Download map image in provided path. |
+| Function                                                    | Description                                                          |
+|:------------------------------------------------------------|:---------------------------------------------------------------------|
+| setSecret(secret)                                           | Set signing secret key.                                              |
+| setCenter(location)                                         | Set map center with address.                                         |
+| setCenterLatLng(latitude, longitude)                        | Set map center with latitude and longitude.                          |
+| setZoom(zoom)                                               | Set map zoom.                                                        |
+| setScale(scale)                                             | Set map scale.                                                       |
+| setSize(width, height)                                      | Set map size.                                                        |
+| setMapType(type as MapType)                                 | Set map type.                                                        |
+| setMapId(id)                                                | Set a map ID previously created in Cloud Console.                    |
+| setFormat(format as Format)                                 | Set map format.                                                      |
+| addMarker(center, label, color, size)                       | Add marker to map.                                                   |
+| addMarkerLatLng(latitude, longitude, label, color, size)    | Add marker to map with latitude and longitude.                       |
+| addMarkerWithIcon(center, icon, shadow)                     | Add custom marker to map.                                            |
+| addMarkerLatLngWithIcon(latitude, longitude, icon, shadow)  | Add marker to map with latitude and longitude.                       |
+| addPolygon(points, border_color, border_weight, fill_color) | Add polygon path to map with array of latitude and longitude points. |
+| make()                                                      | Make url string.                                                     |
+| download($path = 'current path', $name_length = 10)         | Download map image in provided path.                                 |
 
 ## License
 
